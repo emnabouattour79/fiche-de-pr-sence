@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+.profile-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #0e2759, #163c87, #b81d1d, #0a8754, #163c87);
+  background-size: 400% 400%;
+  animation: fluidGradient 14s ease infinite;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+@keyframes fluidGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.profile-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  width: 100%;
+  max-width: 650px;
+  border-radius: 24px;
+  padding: 40px 36px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Liseré haut tricolore TPS */
+.profile-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #163c87 35%, #e62828 35% 70%, #0a8754 70%);
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.profile-logo {
+  width: 130px;
+  height: auto;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.profile-logo:hover {
+  transform: scale(1.03);
+}
+
+.profile-title {
+  color: #0f2757;
+  font-size: 1.65rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.02em;
+}
+
+.profile-subtitle {
+  color: #64748b;
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* Grille pour les champs sur 2 colonnes */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 18px;
+}
+
+@media (max-width: 580px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+
+/* Permet à un champ de prendre toute la largeur si besoin */
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.input-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334e68;
+}
+
+.profile-input {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 0.95rem;
+  border: 1.5px solid #d9e2ec;
+  border-radius: 10px;
+  outline: none;
+  background-color: #f8fafc;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.profile-input:focus {
+  border-color: #163c87;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(22, 60, 135, 0.15);
+}
+
+.profile-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #163c87, #0e2759);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(22, 60, 135, 0.3);
+}
+
+.profile-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1d4ed8, #163c87);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(22, 60, 135, 0.45);
+}
+
+.profile-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.profile-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.profile-back-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.2s;
+}
+
+.profile-back-btn:hover {
+  color: #163c87;
+}

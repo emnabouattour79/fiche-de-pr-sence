@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.legende-wrapper {
+  padding: 30px 20px;
+  max-width: 1350px;
+  margin: 0 auto;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+}
+
+.legende-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 36px 30px;
+  box-shadow: 0 15px 35px rgba(22, 60, 135, 0.08);
+  border: 1px solid #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Liseré haut aux 3 couleurs TPS */
+.legende-topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #163c87 35%, #e62828 35% 70%, #0a8754 70%);
+}
+
+.legende-title {
+  text-align: center;
+  color: #0f2757;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  margin: 0 0 6px 0;
+}
+
+.legende-subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0 0 32px 0;
+}
+
+.legende-grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.legende-column {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.legende-section {
+  background-color: #f8fafc;
+  border-radius: 14px;
+  padding: 18px 20px;
+  border: 1px solid #e2e8f0;
+}
+
+.section-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #163c87;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+  letter-spacing: 0.02em;
+}
+
+.pointage-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid #edf2f7;
+  font-size: 0.85rem;
+  color: #334155;
+  transition: background-color 0.15s ease;
+}
+
+.pointage-row:last-child {
+  border-bottom: none;
+}
+
+.pointage-row:hover {
+  background-color: rgba(22, 60, 135, 0.03);
+}
+
+.badge-light {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #163c87;
+  background-color: #e8edf5;
+  padding: 3px 8px;
+  border-radius: 6px;
+  min-width: 32px;
+  text-align: center;
+}
+
+.badge-dark {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #ffffff;
+  background-color: #163c87;
+  padding: 3px 8px;
+  border-radius: 6px;
+  min-width: 36px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.section-text {
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0 0 10px 0;
+}

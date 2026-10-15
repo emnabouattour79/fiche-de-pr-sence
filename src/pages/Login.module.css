@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* Arrière-plan animé aux couleurs TPS */
+.loginWrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #0e2759, #163c87, #b81d1d, #0a8754, #163c87);
+  background-size: 400% 400%;
+  animation: fluidGradient 14s ease infinite;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+@keyframes fluidGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Carte centrale */
+.loginCard {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  width: 100%;
+  max-width: 440px;
+  border-radius: 24px;
+  padding: 44px 36px 36px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.loginCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.35);
+}
+
+/* Liseré haut aux 3 couleurs TPS */
+.loginCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #163c87 35%, #e62828 35% 70%, #0a8754 70%);
+}
+
+.logoContainer {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tpsLogo {
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.tpsLogo:hover {
+  transform: scale(1.04);
+}
+
+.title {
+  color: #0f2757;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 0.93rem;
+  margin: 0 0 28px 0;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #334e68;
+}
+
+.input {
+  width: 100%;
+  padding: 13px 15px;
+  font-size: 0.98rem;
+  border: 1.5px solid #d9e2ec;
+  border-radius: 10px;
+  outline: none;
+  background-color: #f8fafc;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.input:focus {
+  border-color: #163c87;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(22, 60, 135, 0.15);
+}
+
+/* Conteneur avec bouton afficher/masquer le mot de passe */
+.passwordWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.passwordWrapper .input {
+  padding-right: 48px;
+}
+
+.togglePasswordBtn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.togglePasswordBtn:hover svg {
+  stroke: #163c87;
+}
+
+.btnLogin {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #163c87, #0e2759);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(22, 60, 135, 0.3);
+}
+
+.btnLogin:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1d4ed8, #163c87);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(22, 60, 135, 0.45);
+}
+
+.btnLogin:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.footerText {
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: #64748b;
+  text-align: center;
+}
+
+.linkBtn {
+  background: none;
+  border: none;
+  color: #163c87;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 6px;
+  font-family: inherit;
+}
+
+.linkBtn:hover {
+  color: #0e2759;
+}
+
+.backHome {
+  margin-top: 14px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  cursor: pointer;
+  align-self: center;
+  font-family: inherit;
+  transition: color 0.2s;
+}
+
+.backHome:hover {
+  color: #163c87;
+}

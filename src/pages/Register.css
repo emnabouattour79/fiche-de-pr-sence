@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* Arrière-plan animé aux couleurs TPS */
+.register-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #0e2759, #163c87, #b81d1d, #0a8754, #163c87);
+  background-size: 400% 400%;
+  animation: fluidGradient 14s ease infinite;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+@keyframes fluidGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Carte centrale */
+.register-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  width: 100%;
+  max-width: 460px;
+  border-radius: 24px;
+  padding: 40px 36px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.35);
+}
+
+/* Liseré tricolore supérieur */
+.register-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #163c87 35%, #e62828 35% 70%, #0a8754 70%);
+}
+
+.register-logo-container {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.register-logo {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.register-logo:hover {
+  transform: scale(1.04);
+}
+
+.register-title {
+  color: #0f2757;
+  font-size: 1.65rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.register-subtitle {
+  color: #64748b;
+  font-size: 0.92rem;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.register-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+
+.register-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334e68;
+}
+
+.register-input {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 0.95rem;
+  border: 1.5px solid #d9e2ec;
+  border-radius: 10px;
+  outline: none;
+  background-color: #f8fafc;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.register-input:focus {
+  border-color: #163c87;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(22, 60, 135, 0.15);
+}
+
+/* Wrapper pour positionner les icônes d'œil */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-wrapper .register-input {
+  padding-right: 45px;
+}
+
+.toggle-password-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.toggle-password-btn:hover svg {
+  stroke: #163c87;
+}
+
+/* Bouton d'inscription */
+.register-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 13px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #163c87, #0e2759);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(22, 60, 135, 0.3);
+}
+
+.register-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1d4ed8, #163c87);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(22, 60, 135, 0.45);
+}
+
+.register-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Pied de carte */
+.register-footer-text {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #64748b;
+  text-align: center;
+}
+
+.register-link-btn {
+  background: none;
+  border: none;
+  color: #163c87;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 6px;
+  font-family: inherit;
+}
+
+.register-link-btn:hover {
+  color: #0e2759;
+}
+
+.register-back-home {
+  margin-top: 12px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  cursor: pointer;
+  align-self: center;
+  font-family: inherit;
+  transition: color 0.2s;
+}
+
+.register-back-home:hover {
+  color: #163c87;
+}

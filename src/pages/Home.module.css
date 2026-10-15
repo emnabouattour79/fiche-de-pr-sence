@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* Arrière-plan animé en dégradé */
+.homeWrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #0e2759, #163c87, #b81d1d, #0a8754, #163c87);
+  background-size: 400% 400%;
+  animation: fluidGradient 14s ease infinite;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  padding: 24px;
+  box-sizing: border-box;
+  transition: background-position 0.6s ease;
+}
+
+.homeWrapper:hover {
+  animation-duration: 6s;
+  filter: contrast(1.05) saturate(1.1);
+}
+
+@keyframes fluidGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Carte centrale */
+.portalCard {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  width: 100%;
+  max-width: 460px;
+  border-radius: 24px;
+  padding: 44px 36px 36px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+              0 0 0 1px rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portalCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.35);
+}
+
+/* Bandeau coloré supérieur */
+.portalCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #163c87 35%, #e62828 35% 70%, #0a8754 70%);
+}
+
+/* Conteneur et taille du logo */
+.logoContainer {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.tpsLogo {
+  width: 250px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.tpsLogo:hover {
+  transform: scale(1.03);
+}
+
+/* Textes */
+.portalTitle {
+  color: #0f2757;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.portalSubtitle {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 32px 0;
+}
+
+/* Actions et boutons */
+.actionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.btnPrimary {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #163c87, #0e2759);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(22, 60, 135, 0.3);
+}
+
+.btnPrimary:hover {
+  background: linear-gradient(135deg, #1d4ed8, #163c87);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(22, 60, 135, 0.45);
+}
+
+.btnOutline {
+  width: 100%;
+  padding: 13px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #163c87;
+  background: transparent;
+  border: 2px solid #163c87;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btnOutline:hover {
+  background-color: #163c87;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(22, 60, 135, 0.2);
+}
+
+/* Bas de page */
+.portalFooter {
+  margin-top: 32px;
+  font-size: 0.8rem;
+  color: #64748b;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
